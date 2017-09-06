@@ -1,37 +1,38 @@
-var whichTransitionEvent = function () {
-    var t;
-    var el = document.createElement('fakeelement');
-    var transitions = {
-        'transition': 'transitionend',
-        'OTransition': 'oTransitionEnd',
-        'MozTransition': 'transitionend',
-        'WebkitTransition': 'webkitTransitionEnd'
-    }
-
-    for (t in transitions) {
-        if (el.style[t] !== undefined) {
-            return transitions[t];
+window.onload = function () {
+    var whichTransitionEvent = function () {
+        var t;
+        var el = document.createElement('fakeelement');
+        var transitions = {
+            'transition': 'transitionend',
+            'OTransition': 'oTransitionEnd',
+            'MozTransition': 'transitionend',
+            'WebkitTransition': 'webkitTransitionEnd'
         }
-    }
-};
 
-$(document).ready(function () {
+        for (t in transitions) {
+            if (el.style[t] !== undefined) {
+                return transitions[t];
+            }
+        }
+    };
+
+
     // navigation toggle
 
     $('.navigation-toggle , .navigation ul li a ').on('click', function () {
 
         $('body').toggleClass('navigation-show');
-       
-      
+
+
         $('.page-main, .navigation').addClass('anim').each(function () {
             var transitionEnd = whichTransitionEvent();
             $(this).on(transitionEnd, function () {
                 $(this).removeClass('anim');
             });
         });
-        
-        
-        
+
+
+
     });
 
 
@@ -95,4 +96,4 @@ $(document).ready(function () {
         return false;
     });
 
-});
+};
