@@ -1,4 +1,5 @@
-window.onload = function () {
+$(document).ready(function () {
+
     // wyszukiwanie celu podrozy , obsluga input1
     function searchTarget(e) {
         e.preventDefault();
@@ -117,4 +118,5 @@ window.onload = function () {
     $('.rozkladj').on('submit', 'form', sendForm);
 
 
-};
+
+});

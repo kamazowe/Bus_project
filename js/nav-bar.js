@@ -1,4 +1,4 @@
-window.onload = function () {
+(function () {
     var whichTransitionEvent = function () {
         var t;
         var el = document.createElement('fakeelement');
@@ -96,4 +96,5 @@ window.onload = function () {
         return false;
     });
 
-};
+
+})();
