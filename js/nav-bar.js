@@ -58,7 +58,7 @@
             toggle = 1;
         } else if (toggle == 1) {
             $('.navigation-toggle').animate({
-                rotate: '-30deg',
+              
                 opacity: '1'
             }, "slow");
             console.log('pobieranie toggle2 ' + toggle);
